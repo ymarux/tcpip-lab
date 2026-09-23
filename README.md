@@ -12,20 +12,25 @@ TCP/IPと関連ネットワーク技術を、Cによる実装と実験を通し�
 
 ## テーマの進め方と成果物
 
-1テーマにつき1チャットで進め、小さな問いごとに実装・実験・考察を繰り返します。
-各テーマの `experiments/<テーマ名>/README.md` を入口として、次の文書へ辿れるようにします。
+1テーマにつき1チャット・1作業ブランチで進め、小さな問いごとに実装・実験・考察を繰り返します。
+テーマ開始時に `main` から `lab/<テーマ名>` を作成します（ARPなら `lab/arp`）。
+コードと文書を同じブランチに蓄積し、検証と最終レポートを仕上げてから `main` へ統合します。
 
-- `spec.md`：調べた仕様・実装方針
-- `notes.md`：実験中の記録・試行錯誤
-- `report.md`：テーマの最後に仕上げる検証レポート（最終成果物）
+各テーマの `labs/<テーマ名>/README.md` を入口として、次の文書へ辿れるようにします。
+
+- `spec/spec.md`：調べた仕様・実装方針
+- `spec/notes.md`：実験中の記録・試行錯誤
+- `spec/report.md`：テーマの最後に仕上げる検証レポート（最終成果物）
+
+コード・Makefile・実行スクリプトは各テーマの `src/` に置きます。
 
 ## 最初のテーマ：ARP
 
 初回の到達点は、同一リンク上の相手にARP Requestを送信し、ARP ReplyからIPv4アドレスとMACアドレスの対応を読み取ることです。
 LinuxのNetwork Namespaceとvethで接続した2台相当の環境を使い、相手側のLinuxカーネルが返すReplyを解析します。
 
-- [ARPの検証計画・実験手順](experiments/arp/README.md)
-- [ARPの仕様・実装境界](experiments/arp/spec.md)
+- [ARPの検証計画・実験手順](labs/arp/README.md)
+- [ARPの仕様・実装境界](labs/arp/spec/spec.md)
 - [作業ルール](AGENTS.md)
 - [元の引き継ぎ資料](tcpip-lab_handoff.md)
 
